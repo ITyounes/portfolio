@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title data-fr="Projet 1 - Réseau" data-en="Project 1 - Network"> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let currentLang = "fr";
+
+    const langBtn = document.getElementById("langBtn");
+    const elements = document.querySelectorAll("[data-fr][data-en]");
+
+    if (!langBtn) {
+      console.error("Bouton de langue introuvable");
+      return;
+    }
+
+    langBtn.addEventListener("click", () => {
+      currentLang = currentLang === "fr" ? "en" : "fr";
+      langBtn.textContent = currentLang.toUpperCase();
+
+      elements.forEach(el => {
+        el.textContent = el.dataset[currentLang];
+      });
+    });
+  });
+</script>
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="../style.css">
+    <script src="../script.js"></script>
+</head>
+
+<body class="text-gray-200 min-h-screen">
+     <header class="navbar">
+    <div class="logo">
+      <span class="logo-main">Port</span><span class="logo-accent">folio</span>
+    </div>
+
+    <nav class="nav">
+<a href="../sae14.html"
+         data-fr="Retours à l'accueil" data-en="Back to homepage">Retours à l'accueil</a>
+
+    </nav>
+
+    <button id="langBtn" class="lang-btn">EN</button>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <div class="mb-12">
+      <p class="text-sm text-gray-400 mb-2" data-fr="Projets › Réaliser un réseau" data-en="Projects › Building a network">Projets › Réaliser un réseau</p>
+<h1 class="text-4xl font-bold">
+  <span data-fr="Projets" data-en="Projects">Projets</span>
+  <span class="text-indigo-500"
+        data-fr=" - Réaliser un réseau"
+        data-en=" - Create a network">
+    - Réaliser un réseau
+  </span>
+</h1>
+      <div class="w-16 h-1 bg-indigo-500 mt-3 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <div>
+        <p class="text-gray-300 leading-relaxed mb-8" data-fr="Ce projet consiste à mettre en place un réseau informatique segmenté avec un plan d’adressage IP, des sous-réseaux et un routeur assurant les rôles de passerelle, serveur DHCP et pare-feu. Les postes utilisateurs sont configurés dynamiquement, les serveurs disposent d’IP fixes, et un serveur web Apache sous Linux est sécurisé par des règles de filtrage limitant les flux autorisés.
+" data-en="This project involves setting up a segmented computer network with an IP addressing scheme, subnets, and a router acting as a gateway, DHCP server, and firewall. User workstations are dynamically configured, servers have static IP addresses, and an Apache web server running on Linux is secured by filtering rules that limit allowed traffic.">
+Ce projet consiste à mettre en place un réseau informatique segmenté avec un plan d’adressage IP, des sous-réseaux et un routeur assurant les rôles de passerelle, serveur DHCP et pare-feu. Les postes utilisateurs sont configurés dynamiquement, les serveurs disposent d’IP fixes, et un serveur web Apache sous Linux est sécurisé par des règles de filtrage limitant les flux autorisés.
+        </p>
+
+
+        <div class="flex gap-4">
+          <a href="#"
+             class="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg transition" data-fr="En cours ..."
+             data-en="In progress...">
+             En cours ...
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 backdrop-blur">
+        <h3 class="text-xl font-semibold mb-4" data-fr="Objectifs" data-en="Objectives"> 
+          Objectifs
+        </h3>
+
+        <div class="bg-black/40 rounded-xl p-4 text-sm text-gray-300">
+          <p data-fr="✔ Concevoir un réseau informatique segmenté et structuré" 
+          data-en="✔ Design a segmented and structured computer network">✔ Concevoir un réseau informatique segmenté et structuré</p>
+          <p data-fr="✔ Mettre en place un plan d’adressage IP cohérent"
+          data-en="✔ Implement a consistent IP addressing plan">✔ Mettre en place un plan d’adressage IP cohérent</p>
+          <p data-fr="✔ Sécuriser le réseau des serveurs grâce à des règles de filtrage"
+          data-en="✔ Secure the server network using filtering rules">✔ Sécuriser le réseau des serveurs grâce à des règles de filtrage</p>
+          <p data-fr="✔ Vérifier le bon fonctionnement par des tests de connectivité et d’accès aux services"
+          data-en="✔ Verify proper functioning through connectivity and service access tests">✔ Vérifier le bon fonctionnement par des tests de connectivité et d’accès aux services</p>
+        </div>
+      </div>
+
+    </div>
+
+      <br>
+    <div class="flex flex-wrap gap-3">
+  <span class="tech">CISCO</span>
+  <span class="tech" data-en= "Adressage IP" data-en="IP addressing">Adressage IP</span>
+  <span class="tech" >Linux</span>
+  <div class="w-full"></div> 
+  <span class="tech">DHCP</span>
+  <span class="tech" data-fr="Pare-Feu" data-en="Firewall">Pare-Feu</span>
+  <span class="tech" data-fr="Routeur" data-en="Router">Routeur</span>
+  <span class="tech">Switch</span>
+  <div class="w-full"></div> 
+  <span class="tech" data-fr="Câblage" data-en="Wiring">Câblage</span>
+  <span class="tech" data-fr="Serveur Apache" data-en="Apache Server">Serveur Apache</span>
+</div>
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+

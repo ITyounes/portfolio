@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title data-fr="Projet 2 - Site web" data-en="Project 2 - Website"> </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+ <link rel="stylesheet" href="../style.css">
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let currentLang = "fr";
+
+    const langBtn = document.getElementById("langBtn");
+    const elements = document.querySelectorAll("[data-fr][data-en]");
+
+    if (!langBtn) {
+      console.error("Bouton de langue introuvable");
+      return;
+    }
+
+    langBtn.addEventListener("click", () => {
+      currentLang = currentLang === "fr" ? "en" : "fr";
+      langBtn.textContent = currentLang.toUpperCase();
+
+      elements.forEach(el => {
+        el.textContent = el.dataset[currentLang];
+      });
+    });
+  });
+</script>
+
+</head>
+
+<body class="text-gray-200 min-h-screen">
+<header class="navbar">
+    <div class="logo">
+      <span class="logo-main">Port</span><span class="logo-accent">folio</span>
+    </div>
+
+    <nav class="nav">
+<a href="../sae14.html"
+         data-fr="Retours à l'accueil" data-en="Back to homepage">Retours à l'accueil</a>
+
+    </nav>
+
+    <button id="langBtn" class="lang-btn">EN</button>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-16">
+
+    <div class="mb-12">
+      <p class="text-sm text-gray-400 mb-2" data-fr="Projets › Site web avec CSV" data-en="Projects › Website with CSV" >Projets › Site web avec CSV</p>
+
+ <h1 class="text-4xl font-bold">
+  <span data-fr="Projets" data-en="Projects">Projets</span>
+  <span class="text-indigo-500"
+        data-fr=" - Site Web"
+        data-en=" - Website">
+    - Site Web
+  </span>
+</h1>
+      <div class="w-16 h-1 bg-indigo-500 mt-3 rounded-full"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <div>
+        <p class="text-gray-300 leading-relaxed mb-8"
+        data-en="This project aims to design a website that allows users to import, analyze, and dynamically display data from a CSV file. It emphasizes information structuring, readability, and a user-friendly interface to facilitate data understanding and use."
+data-fr="Ce projet vise à concevoir un site web permettant d’importer, analyser et afficher dynamiquement des données issues d’un fichier CSV. Il met l’accent sur la structuration des informations, leur lisibilité et une interface ergonomique afin de faciliter la compréhension et l’exploitation des données."  > Ce projet vise à concevoir un site web permettant d’importer, analyser et afficher dynamiquement des données issues d’un fichier CSV. Il met l’accent sur la structuration des informations, leur lisibilité et une interface ergonomique afin de faciliter la compréhension et l’exploitation des données.   </p>
+
+        <div class="flex gap-4">
+          <a href="#"
+             class="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg transition" data-fr="En cours ..."
+             data-en="In progress...">
+             En cours ...
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 backdrop-blur">
+        <h3 class="text-xl font-semibold mb-4"
+         data-fr="Objectifs"
+        data-en="Objectives">Objectifs
+        </h3>
+
+        <div class="bg-black/40 rounded-xl p-4 text-sm text-gray-300">
+          <p data-fr="✔ Importer et afficher un fichier CSV"
+          data-en="✔ Import and display a CSV file">✔ Importer et afficher un fichier CSV</p>
+          <p data-fr="✔ Structurer les données dans une interface web"
+          data-en="✔ Structuring data in a web interface">✔ Structurer les données dans une interface web</p>
+          <p data-fr="✔ Améliorer la lisibilité et l’ergonomie"
+          data-en="✔ Improve readability and ergonomics">✔ Améliorer la lisibilité et l’ergonomie</p>
+          <p data-fr="✔ Manipuler des données via Python"
+          data-en="✔ Manipulating data using Python">✔ Manipuler des données via Python</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+  <span class="tech">HTML</span>
+  <span class="tech">CSS</span>
+  <span class="tech">Javascript </span>
+  <div class="w-full"></div> 
+  <span class="tech">CSV</span>
+  <span class="tech" data-fr="Analyser"
+  data-en="Analyze">Analyser</span>
+</div>
+
+
+    </div>
+
+  </div>
+
+</body>
+</html>
+
+
