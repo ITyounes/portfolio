@@ -1341,6 +1341,68 @@ html, body { overflow-x: hidden; }
     max-width: 100% !important;
   }
 }
+/* ===== PARCOURS SCOLAIRE : rendu clair sur mobile ===== */
+@media (max-width: 768px){
+
+  /* le conteneur sombre ne doit pas limiter la largeur */
+  #education,
+  .education-section,
+  .resume-section{
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* timeline plus large (presque toute la largeur du tel) */
+  .timeline{
+    width: 95vw !important;
+    max-width: 95vw !important;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+  }
+
+  /* on enlève la ligne/effet central si ça serre */
+  .timeline::before{
+    display: none !important;
+  }
+
+  /* plus de left/right -> tout en colonne */
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right{
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* cartes: pleine largeur */
+  .timeline-item .content{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  /* on enlève le petit losange/mark en bas si tu l’as */
+  .timeline-item::after,
+  .timeline-item::before{
+    display: none !important;
+    content: none !important;
+  }
+
+  /* dates lisibles */
+  .timeline-item .date{
+    display: inline-block !important;
+    margin: 0 0 10px 0 !important;
+    padding: 6px 10px !important;
+    border-radius: 999px !important;
+    background: rgba(255,255,255,0.06) !important;
+  }
+}
+
 
 
 
