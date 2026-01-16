@@ -1628,53 +1628,52 @@ html, body { overflow-x: hidden; }
     border-bottom: 0 !important;
   }
 }
-
-
-
-/* ===== CONTACT : mobile propre (full width + 1 colonne) ===== */
+/* ===== CONTACT : FULL WIDTH sur mobile (plus étroit -> réglé) ===== */
 @media (max-width: 768px){
 
-  /* section */
+  /* la section sort des conteneurs qui rétrécissent */
+  section#contact.contact-section,
   #contact.contact-section{
-    padding: 48px 16px !important;
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 48px 14px !important;
+    box-sizing: border-box !important;
   }
 
-  /* conteneur en colonne */
+  /* container : full */
   #contact .contact-container{
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
     display: flex !important;
     flex-direction: column !important;
     gap: 16px !important;
-
-    width: 100% !important;
-    max-width: 720px !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
   }
 
-  /* les 2 blocs prennent toute la largeur */
+  /* cards : full */
   #contact .contact-info,
   #contact .contact-form{
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: none !important;
     margin: 0 !important;
   }
 
-  /* liens longs (email/linkedin) : propre */
-  #contact .contact-list a{
-    word-break: break-word !important;
-    overflow-wrap: anywhere !important;
-  }
-
-  /* formulaire : inputs full width + spacing */
+  /* champs full largeur */
   #contact .contact-form input,
-  #contact .contact-form textarea{
+  #contact .contact-form textarea,
+  #contact .contact-form button{
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
   }
 
-  /* bouton full width */
-  #contact .contact-form button{
-    width: 100% !important;
+  /* liens longs */
+  #contact .contact-list a{
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
   }
 }
+
