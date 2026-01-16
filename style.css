@@ -1247,3 +1247,59 @@ html, body { overflow-x: hidden; }
   }
 }
 
+
+/* ===== FIX H1 mobile (plus de lettres verticales) ===== */
+@media (max-width: 768px){
+
+  /* layout hero en 1 colonne */
+  #home.section.hero{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* le bloc texte prend toute la largeur */
+  #home .hero-left{
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  /* titre normal (pas de break-all / pas de vertical) */
+  #home .hero-left h1{
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    display: block !important;
+
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important; /* casse seulement si vraiment nécessaire */
+    hyphens: auto;
+
+    font-size: clamp(32px, 9vw, 46px);
+    line-height: 1.12;
+  }
+
+  /* au cas où tes spans auraient un style qui casse le titre */
+  #home .hero-left h1 span{
+    display: inline !important;
+  }
+
+  /* cache le diagramme sur mobile */
+  .network, .orbit, .node, .center{
+    display: none !important;
+  }
+}
+
+
+
+
+
