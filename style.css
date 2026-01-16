@@ -1407,4 +1407,65 @@ html, body { overflow-x: hidden; }
 
 
 
+/* ===========================
+   PROJETS : MOBILE (SAFE + GARANTI)
+   =========================== */
+@media (max-width: 768px){
+
+  /* 0) anti bug iPhone : pas de scroll horizontal */
+  html, body { overflow-x: hidden !important; }
+  #projects { overflow-x: hidden !important; }
+
+  /* 1) conteneur : colonne + centré + largeur full */
+  #projects .projects-container{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+
+    /* marge latérale maîtrisée (plus petit = cartes plus larges) */
+    padding: 0 12px !important;
+  }
+
+  /* 2) le lien définit la largeur “carte” (presque full écran) */
+  #projects .project-link{
+    display: block !important;
+
+    /* largeur garantie, responsive */
+    width: 100% !important;
+    max-width: 96vw !important;
+
+    margin: 0 auto !important;
+    padding: 0 !important;
+
+    /* reset total (évite les décalages/rognages) */
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  /* 3) la carte remplit le lien */
+  #projects .project-card{
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+  }
+
+  /* 4) tags : wrap propre (sinon ça pousse et ça casse la largeur) */
+  #projects .project-tags{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+}
+
 
