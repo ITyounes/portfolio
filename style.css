@@ -1677,6 +1677,7 @@ html, body { overflow-x: hidden; }
   }
 }
 
+
 /* Texte d'aide : visible uniquement sur mobile */
 .skills-mobile-hint{ display:none; }
 
@@ -1692,4 +1693,6 @@ html, body { overflow-x: hidden; }
     line-height: 1.5;
   }
 }
+
+
 
