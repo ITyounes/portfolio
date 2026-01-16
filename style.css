@@ -1559,9 +1559,6 @@ html, body { overflow-x: hidden; }
   }
 }
 
-  }
-}
-
 /* ===== PROJETS MOBILE : texte simple full width (garanti) ===== */
 @media (max-width: 768px){
 
@@ -1631,4 +1628,3 @@ html, body { overflow-x: hidden; }
     border-bottom: 0 !important;
   }
 }
-
