@@ -146,3 +146,74 @@ tabs.forEach(tab => {
   });
 });
 
+// ====== Mobile drawer menu ======
+const menuBtn = document.getElementById("menuBtn");
+const menuClose = document.getElementById("menuClose");
+const menuOverlay = document.getElementById("menuOverlay");
+const mobileMenu = document.getElementById("mobileMenu");
+const drawerLinks = document.querySelectorAll(".drawer-link");
+
+function openMenu() {
+  document.body.classList.add("menu-open");
+  menuBtn?.setAttribute("aria-expanded", "true");
+  mobileMenu?.setAttribute("aria-hidden", "false");
+}
+
+function closeMenu() {
+  document.body.classList.remove("menu-open");
+  menuBtn?.setAttribute("aria-expanded", "false");
+  mobileMenu?.setAttribute("aria-hidden", "true");
+}
+
+menuBtn?.addEventListener("click", openMenu);
+menuClose?.addEventListener("click", closeMenu);
+menuOverlay?.addEventListener("click", closeMenu);
+
+// Ferme le menu quand tu cliques un lien
+drawerLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    closeMenu();
+  });
+});
+
+// Ferme avec la touche ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeMenu();
+});
+
+// ====== Lang switch (si tu as deja une logique) ======
+const drawerLangBtn = document.getElementById("drawerLangBtn");
+const topLangBtn = document.getElementById("langBtn");
+
+// Ici j'appelle une fonction toggleLang() si tu l'as déjà.
+// Sinon je te mets une version simple juste en dessous.
+function syncLangButtons(text) {
+  if (topLangBtn) topLangBtn.textContent = text;
+  if (drawerLangBtn) drawerLangBtn.textContent = text;
+}
+
+// Si tu as deja une fonction, remplace le code ci-dessous par ton appel.
+let currentLang = "fr"; // par défaut
+
+function applyLanguage(lang) {
+  const elements = document.querySelectorAll("[data-fr][data-en]");
+  elements.forEach(el => {
+    el.textContent = (lang === "fr") ? el.getAttribute("data-fr") : el.getAttribute("data-en");
+  });
+
+  currentLang = lang;
+  // Le bouton affiche la langue "à passer" (comme ton bouton EN)
+  const next = (lang === "fr") ? "EN" : "FR";
+  syncLangButtons(next);
+}
+
+function toggleLanguage() {
+  applyLanguage(currentLang === "fr" ? "en" : "fr");
+}
+
+topLangBtn?.addEventListener("click", toggleLanguage);
+drawerLangBtn?.addEventListener("click", toggleLanguage);
+
+// applique au chargement
+applyLanguage("fr");
+
