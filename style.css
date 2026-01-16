@@ -1405,29 +1405,89 @@ html, body { overflow-x: hidden; }
 
 
 
-/* ===== PROJETS : empêcher la rétractation sur mobile ===== */
+
+
+/* PC par défaut */
+.projects-mobile{ display:none; }
+
+/* Mobile: on cache l’ancien visuel et on affiche le nouveau */
+@media (max-width: 768px){
+  .projects-desktop{ display:none !important; }
+  .projects-mobile{ display:block; }
+}
+
+/* Nouveau design mobile */
 @media (max-width: 768px){
 
-  /* le conteneur ne doit pas réduire ses enfants */
-  #projects .projects-container{
-    align-items: stretch !important; /* au lieu de center */
-    padding: 0 12px !important;
+  .mproj-list{
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
-  /* le lien prend toute la largeur disponible */
-  #projects .project-link{
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 0 18px 0 !important; /* plus de auto-center qui peut bug */
+  .mproj-row{
+    display: grid;
+    grid-template-columns: 44px 1fr 18px;
+    gap: 12px;
+    align-items: center;
+
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(10,12,24,.55);
+    border: 1px solid rgba(255,255,255,.12);
+    overflow: hidden;
   }
 
-  /* la carte : quasi plein écran */
-  #projects .project-card{
-    width: 100% !important;
-    max-width: 100% !important;
+  .mproj-ico{
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: rgba(123,125,255,.18);
+    border: 1px solid rgba(123,125,255,.28);
+    color: #dfe3ff;
+    font-size: 18px;
+  }
 
-    /* au cas où une ancienne règle impose une largeur */
-    min-width: 0 !important;
+  .mproj-title{
+    font-weight: 800;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .mproj-desc{
+    color: #dfe3ff;
+    font-size: 13px;
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+
+  .mproj-tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .mproj-tags span{
+    font-size: 11px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    color: #dfe3ff;
+    background: rgba(255,255,255,.06);
+  }
+
+  .mproj-arrow{
+    color: rgba(223,227,255,.8);
+    font-size: 14px;
   }
 }
 
@@ -1498,3 +1558,7 @@ html, body { overflow-x: hidden; }
     display: block !important;
   }
 }
+
+  }
+}
+
