@@ -1299,6 +1299,49 @@ html, body { overflow-x: hidden; }
   }
 }
 
+@media (max-width: 768px){
+
+  /* 1 colonne, pleine largeur */
+  .timeline{
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  /* on enlève la ligne verticale */
+  .timeline::before{
+    display: none !important;
+  }
+
+  /* items full width */
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right{
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 0 18px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* date comme un petit badge */
+  .timeline-item .date{
+    display: inline-block;
+    margin: 0 0 10px 0 !important;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* carte prend toute la largeur */
+  .timeline-item .content{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
 
 
 
