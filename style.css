@@ -1694,5 +1694,19 @@ html, body { overflow-x: hidden; }
   }
 }
 
+/* Navbar fixée en haut */
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* Important : ajoute de l'espace en haut du site pour ne pas cacher le contenu */
+body{
+  padding-top: 80px; /* ajuste selon la hauteur de ta navbar */
+}
+
 
 
