@@ -1562,3 +1562,73 @@ html, body { overflow-x: hidden; }
   }
 }
 
+/* ===== PROJETS MOBILE : texte simple full width (garanti) ===== */
+@media (max-width: 768px){
+
+  /* la section sort de tout conteneur qui la rétrécit */
+  section#projects{
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  /* on cache TOUT l'ancien design "cases" */
+  #projects .projects-container,
+  #projects .project-link,
+  #projects .project-card{
+    display: none !important;
+  }
+
+  /* intro */
+  #projects .projects-intro{
+    margin: 0 0 12px 0 !important;
+    color: #dfe3ff !important;
+    line-height: 1.6 !important;
+  }
+
+  /* conteneur texte = full largeur */
+  #projects .projects-text-only{
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* liens : reset complet + full width (pour éviter la colonne fine) */
+  #projects .projects-text-only a{
+    all: unset;                 /* reset total des styles qui cassent */
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    padding: 14px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+
+    color: #dfe3ff !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+
+    cursor: pointer !important;
+    position: relative !important;
+  }
+
+  /* petite flèche à droite */
+  #projects .projects-text-only a::after{
+    content: "›";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .7;
+  }
+
+  #projects .projects-text-only a:last-child{
+    border-bottom: 0 !important;
+  }
+}
+
