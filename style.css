@@ -1016,3 +1016,234 @@ body {
   font-size: 13px;
   color: rgba(255,255,255,0.7);
 }
+
+/* ===== Mobile-only hamburger + drawer (PC inchangé) ===== */
+
+/* Par défaut (PC) : rien ne s'affiche */
+.hamburger,
+.menu-overlay,
+.mobile-drawer {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  /* 1) Header mobile : burger + logo */
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    width: 100%;
+  }
+
+  /* 2) On cache le menu PC + le bouton langue en haut */
+  .nav{ display: none !important; }
+  #langBtn{ display: none !important; }
+
+  /* 3) Hamburger visible */
+  .hamburger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .hamburger span{
+    width: 22px;
+    height: 2px;
+    margin: 4px 0;
+    border-radius: 2px;
+    background: #cfd3ff;
+  }
+
+  /* 4) Overlay */
+  .menu-overlay{
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease;
+    z-index: 999;
+  }
+
+  /* 5) Drawer */
+  .mobile-drawer{
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: min(320px, 85vw);
+    background: rgba(10,12,24,0.98);
+    backdrop-filter: blur(10px);
+    transform: translateX(-110%);
+    transition: transform 280ms ease;
+    z-index: 1000;
+    padding: 16px;
+  }
+
+  .drawer-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .drawer-close{
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: transparent;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  .drawer-nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .drawer-link{
+    display: block;
+    padding: 12px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #dfe3ff;
+    background: rgba(255,255,255,0.06);
+  }
+
+  .drawer-footer{
+    margin-top: 16px;
+  }
+
+  /* 6) Etat ouvert */
+  body.menu-open .mobile-drawer{
+    transform: translateX(0);
+  }
+  body.menu-open .menu-overlay{
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* évite le scroll horizontal chelou */
+html, body { overflow-x: hidden; }
+
+
+@media (min-width: 769px){
+  .navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 5000;
+  }
+
+  /* important : pour que le contenu ne passe pas sous la navbar */
+  body{
+    padding-top: 90px; /* ajuste: 70-100px selon la hauteur de ta navbar */
+  }
+}
+@media (max-width: 768px){
+  .network{
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* ===== Timeline propre sur mobile (1 colonne) ===== */
+@media (max-width: 768px){
+
+  /* évite les débordements */
+  html, body { overflow-x: hidden; }
+
+  /* si ta timeline a une ligne verticale (::before) */
+  .timeline::before{
+    left: 16px !important;   /* place la ligne à gauche */
+  }
+
+  /* toutes les items prennent toute la largeur */
+  .timeline-item{
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 0 0 24px 0 !important;
+    padding-left: 44px !important; /* laisse la place pour la ligne */
+    box-sizing: border-box;
+  }
+
+  /* neutralise les classes left/right */
+  .timeline-item.left,
+  .timeline-item.right{
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  /* la carte ne dépasse plus */
+  .timeline-item .content{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* la date en haut, bien lisible */
+  .timeline-item .date{
+    display: block;
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 0 8px 0 !important;
+  }
+}
+
+/* ===== Skills tabs centrés (mobile) ===== */
+@media (max-width: 768px){
+
+  .skills-nav{
+    display: flex;
+    justify-content: center;  /* centre le groupe */
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* si ton nav est dans une capsule/forme */
+  .skills-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;      /* centre la capsule */
+  }
+}@media (max-width: 768px){
+  .skills-nav{
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 16px;
+  }
+
+  .skills-nav::-webkit-scrollbar{
+    display: none;
+  }
+
+  .skill-tab{
+    flex: 0 0 auto;
+  }
+}
+
