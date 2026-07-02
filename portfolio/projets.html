@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes projets — OUAMRANE Younes</title>
+  <meta name="description" content="Projets réseau, cybersécurité et développement web de Younes Ouamrane : SAÉ, infrastructures virtualisées, applications PHP/PostgreSQL.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <!-- ===== EN-TÊTE DE PAGE ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span>Projets</nav>
+      <span class="eyebrow reveal">// Projets</span>
+      <h1 class="reveal" data-delay="1">Mes <span style="color:var(--accent)">projets</span></h1>
+      <p class="reveal" data-delay="2">
+        Infrastructures réseau virtualisées, applications web, analyses sécurité : chaque projet est documenté
+        avec son contexte, sa méthodologie et ses résultats.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== LISTE DES PROJETS ===== -->
+  <section style="padding-top:32px">
+    <div class="container cards">
+
+      <article class="card reveal">
+        <div class="card__icon">🖧</div>
+        <h3>Réseau multi-sites — SAÉ 2.01</h3>
+        <div class="tags"><span class="tag">OPNsense</span><span class="tag">VLAN</span><span class="tag">DHCP relay</span><span class="tag">FOG</span></div>
+        <p>Infrastructure Siège/Agence complète : segmentation VLAN, relais DHCP, déploiement de postes par PXE/FOG, routage statique inter-sites et commutation Cisco.</p>
+        <a href="projet-reseau.html" class="card__link">Voir le projet</a>
+      </article>
+
+      <article class="card reveal" data-delay="1">
+        <div class="card__icon">⚖️</div>
+        <h3>Juris Nova — réseau d'entreprise</h3>
+        <div class="tags"><span class="tag">GNS3</span><span class="tag">GLPI</span><span class="tag">Samba</span><span class="tag">7 VLANs</span></div>
+        <p>Réseau complet d'un cabinet d'avocats virtualisé sous GNS3 : OPNsense, switches Cisco, GLPI + MariaDB, partages Samba avec contrôle d'accès par groupes.</p>
+        <a href="projet-jurisnova.html" class="card__link">Voir le projet</a>
+      </article>
+
+      <article class="card reveal" data-delay="2">
+        <div class="card__icon">🌐</div>
+        <h3>Plateforme IPAM — SAÉ 2.03</h3>
+        <div class="tags"><span class="tag">PHP</span><span class="tag">PostgreSQL</span><span class="tag">IPAM</span></div>
+        <p>Application web de gestion d'adresses IP pour un FAI fictif (AS 65556) : attribution de sous-réseaux, suivi du plan d'adressage 164.166.0.0/16.</p>
+        <a href="projet-ipam.html" class="card__link">Voir le projet</a>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__icon">🛡️</div>
+        <h3>Sensibilisation cybersécurité</h3>
+        <div class="tags"><span class="tag">Cybersécurité</span><span class="tag">Vidéo</span><span class="tag">Communication</span></div>
+        <p>Vidéo de sensibilisation aux risques numériques à destination du grand public : phishing, gestion des mots de passe, mises à jour et sauvegardes.</p>
+        <a href="projet-cyber.html" class="card__link">Voir le projet</a>
+      </article>
+
+      <article class="card reveal" data-delay="1">
+        <div class="card__icon">📊</div>
+        <h3>Traitement de données CSV</h3>
+        <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">Python</span><span class="tag">CSV</span></div>
+        <p>Interface web pour importer, filtrer et exploiter des jeux de données au format CSV, avec traitement côté Python.</p>
+        <a href="projet-csv.html" class="card__link">Voir le projet</a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

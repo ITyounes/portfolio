@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traitement de données CSV — SAÉ 1.05 | OUAMRANE Younes</title>
+  <meta name="description" content="SAÉ 1.05 : interface web pour importer, filtrer et exploiter des jeux de données CSV avec traitement Python.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="projets.html">Projets</a><span class="sep">/</span>SAÉ 1.05</nav>
+      <span class="eyebrow reveal">// Projet — SAÉ 1.05</span>
+      <h1 class="reveal" data-delay="1">Traitement de <span style="color:var(--accent)">données CSV</span></h1>
+      <p class="reveal" data-delay="2">Développement d'une interface web permettant d'importer un jeu de données au format CSV, de le filtrer et d'en extraire des statistiques exploitables.</p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Contexte</span><strong>SAÉ 1.05 — BUT R&T</strong></div>
+        <div class="meta-item"><span>Stack</span><strong>HTML/CSS · Python</strong></div>
+        <div class="meta-item"><span>Format</span><strong>CSV</strong></div>
+        <div class="meta-item"><span>Livrable</span><strong>Interface web</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#contexte">Contexte et objectifs</a></li>
+        <li><a href="#fonctionnement">Fonctionnement</a></li>
+        <li><a href="#realisation">Réalisation technique</a></li>
+        <li><a href="#bilan">Bilan et compétences</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="contexte">Contexte et objectifs</h2>
+      <p>Les données brutes au format CSV sont partout (exports, relevés, inventaires) mais illisibles telles quelles. L'objectif de cette SAÉ : construire un outil qui transforme un fichier CSV en <strong>informations exploitables</strong>.</p>
+
+      <h2 id="fonctionnement">Fonctionnement</h2>
+      <p>L'utilisateur importe son fichier, le traitement Python le parse et applique les filtres demandés, puis les résultats sont restitués sous forme de tableaux dans la page web.</p>
+      <div style="background:#0b1524; border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin:24px 0; overflow-x:auto"><svg viewBox="0 0 860 190" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:680px; font-family:'JetBrains Mono',monospace"><rect x="30" y="60" width="190" height="66" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/><text x="125.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">📄 Fichier CSV</text><text x="125.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Données brutes</text><line x1="220" y1="93" x2="310" y2="93" stroke="#f6c945" stroke-width="2.5"/><polygon points="300,88 312,93 300,98" fill="#f6c945"/><text x="265.0" y="81" fill="#f6c945" font-size="11" text-anchor="middle">Import</text><rect x="310" y="60" width="230" height="66" rx="10" fill="#101f30" stroke="#f6c945" stroke-width="1.5"/><text x="425.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🐍 Traitement Python</text><text x="425.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Parsing · Filtres · Tris</text><line x1="540" y1="93" x2="630" y2="93" stroke="#f6c945" stroke-width="2.5"/><polygon points="620,88 632,93 620,98" fill="#f6c945"/><text x="585.0" y="81" fill="#f6c945" font-size="11" text-anchor="middle">Résultats</text><rect x="630" y="60" width="200" height="66" rx="10" fill="#101f30" stroke="#4ade80" stroke-width="1.5"/><text x="730.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🌍 Page web</text><text x="730.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Tableaux · Statistiques</text></svg></div>
+
+      <h2 id="realisation">Réalisation technique</h2>
+      <ul>
+        <li><strong>Parsing :</strong> lecture du CSV, détection des colonnes et gestion des lignes malformées.</li>
+        <li><strong>Filtres et tris :</strong> sélection par colonne, par valeur, tri croissant/décroissant.</li>
+        <li><strong>Statistiques :</strong> comptages, moyennes et valeurs extrêmes sur les colonnes numériques.</li>
+        <li><strong>Restitution :</strong> tableaux HTML mis en forme en CSS pour une lecture claire.</li>
+      </ul>
+
+      <h2 id="bilan">Bilan et compétences</h2>
+      <p>Premier vrai pont entre <strong>programmation et présentation web</strong> : les bases posées ici (manipuler des données, les afficher proprement) ont directement servi pour la plateforme IPAM du semestre 2.</p>
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="projets.html" class="btn btn--ghost">← Tous les projets</a>
+        <a href="projet-ipam.html" class="btn btn--primary">Voir la suite : plateforme IPAM</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

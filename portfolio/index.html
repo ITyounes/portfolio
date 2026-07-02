@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUAMRANE Younes — Portfolio | Réseaux & Cybersécurité</title>
+  <meta name="description" content="Portfolio de OUAMRANE Younes, étudiant en BUT Réseaux & Télécommunications à l'IUT de Villetaneuse. Projets réseau, cybersécurité, systèmes Linux et développement web.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+  <div class="bg-glow bg-glow--2"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="active">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="hero__badge reveal"><span class="dot"></span> Recherche une alternance — Technicien réseau / IT</span>
+        <h1 class="reveal" data-delay="1">Étudiant en <span class="accent">Réseaux &amp;<br>Télécommunications</span></h1>
+        <p class="hero__sub reveal" data-delay="2">
+          Je m'appelle <strong>Younes Ouamrane</strong>. Je conçois, administre et sécurise des
+          infrastructures réseau, de la maquette GNS3 au déploiement de services sur Linux.
+          Passionné de cybersécurité et de systèmes.
+        </p>
+        <div class="hero__cta reveal" data-delay="3">
+          <a href="projets.html" class="btn btn--primary">Voir mes projets</a>
+          <a href="CV_OUAMRYounes.pdf" class="btn btn--ghost" download>Télécharger mon CV</a>
+        </div>
+        <div class="hero__socials reveal" data-delay="3">
+          <a href="https://github.com/ITyounes" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.93c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.54-3.87-1.54-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.41-2.69 5.38-5.25 5.67.41.35.78 1.05.78 2.13v3.16c0 .31.2.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/younes-ouamrane-350882374" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5ZM.24 8.25h4.52V23H.24V8.25ZM8.34 8.25h4.33v2.01h.06c.6-1.14 2.07-2.34 4.27-2.34 4.57 0 5.41 3.01 5.41 6.92V23h-4.51v-7.16c0-1.71-.03-3.9-2.38-3.9-2.38 0-2.75 1.86-2.75 3.78V23H8.34V8.25Z"/></svg>
+          </a>
+          <a href="mailto:ouamraneyounes90@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Signature : terminal animé -->
+      <div class="reveal" data-delay="2">
+        <div class="terminal">
+          <div class="terminal__bar">
+            <i></i><i></i><i></i>
+            <span class="terminal__title">younes@rt-iut — bash</span>
+          </div>
+          <div class="terminal__body" id="terminal-body"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== STATS ===== -->
+  <section style="padding-top:0">
+    <div class="container stats">
+      <div class="stat reveal"><div class="stat__num" data-count="9">0</div><div class="stat__label">SAÉ réalisées</div></div>
+      <div class="stat reveal" data-delay="1"><div class="stat__num" data-count="29">0</div><div class="stat__label">Ressources suivies</div></div>
+      <div class="stat reveal" data-delay="2"><div class="stat__num" data-count="4">0</div><div class="stat__label">Langues parlées</div></div>
+      <div class="stat reveal" data-delay="3"><div class="stat__num" data-count="3">0</div><div class="stat__label">Années de formation (BUT)</div></div>
+    </div>
+  </section>
+
+  <!-- ===== PARCOURS ===== -->
+  <section id="parcours">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">// Parcours</span>
+        <h2>Mon parcours scolaire</h2>
+        <p>Un cursus orienté réseaux, systèmes et sécurité, construit étape par étape.</p>
+      </div>
+      <div class="container--narrow">
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <span class="timeline__date">2025 — 2028</span>
+            <h3>BUT Réseaux &amp; Télécommunications — IUT de Villetaneuse</h3>
+            <p>Université Sorbonne Paris Nord. Administration réseau (VLAN, routage, DHCP, DNS), systèmes Linux/Windows, développement web (PHP/PostgreSQL), télécommunications et cybersécurité. Formation visée en alternance.</p>
+          </div>
+          <div class="timeline__item reveal" data-delay="1">
+            <span class="timeline__date">2022 — 2025</span>
+            <h3>Lycée Richelieu — Rueil-Malmaison</h3>
+            <p>Baccalauréat général. Spécialité Mathématique et Physique-Chimie. </p>
+          </div>
+          <div class="timeline__item reveal" data-delay="2">
+            <span class="timeline__date">2018 — 2022</span>
+            <h3>Collège Jules-Verne — Rueil-Malmaison</h3>
+            <p>Formation générale et premiers pas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPÉTENCES ===== -->
+  <section id="competences">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">// Compétences</span>
+        <h2>Ce que je sais faire</h2>
+        <p>Les compétences du référentiel BUT R&amp;T, mises en pratique sur des projets concrets.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-block reveal">
+          <h3><span class="card__icon">🖧</span> Administrer</h3>
+          <div class="skill"><div class="skill__row"><span>Linux (Debian) : services &amp; serveurs</span><span>85%</span></div><div class="skill__bar"><div class="skill__fill" data-level="85"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>OPNsense : pare-feu, VLAN, DHCP</span><span>80%</span></div><div class="skill__bar"><div class="skill__fill" data-level="80"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>GLPI, Samba, Apache, MariaDB</span><span>75%</span></div><div class="skill__bar"><div class="skill__fill" data-level="75"></div></div></div>
+        </div>
+        <div class="skill-block reveal" data-delay="1">
+          <h3><span class="card__icon">🔌</span> Connecter</h3>
+          <div class="skill"><div class="skill__row"><span>Cisco IOS : switching, VLAN, STP</span><span>80%</span></div><div class="skill__bar"><div class="skill__fill" data-level="80"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>Routage statique &amp; inter-VLAN</span><span>78%</span></div><div class="skill__bar"><div class="skill__fill" data-level="78"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>GNS3 :  virtualisation d'infrastructures</span><span>85%</span></div><div class="skill__bar"><div class="skill__fill" data-level="85"></div></div></div>
+        </div>
+        <div class="skill-block reveal" data-delay="2">
+          <h3><span class="card__icon">💻</span> Programmer</h3>
+          <div class="skill"><div class="skill__row"><span>PHP / PostgreSQL</span><span>75%</span></div><div class="skill__bar"><div class="skill__fill" data-level="75"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>HTML / CSS / JavaScript</span><span>78%</span></div><div class="skill__bar"><div class="skill__fill" data-level="78"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>Python &amp; scripts Bash</span><span>70%</span></div><div class="skill__bar"><div class="skill__fill" data-level="70"></div></div></div>
+        </div>
+        <div class="skill-block reveal" data-delay="3">
+          <h3><span class="card__icon">🛡️</span> Sécuriser</h3>
+          <div class="skill"><div class="skill__row"><span>Règles de filtrage &amp; segmentation</span><span>75%</span></div><div class="skill__bar"><div class="skill__fill" data-level="75"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>Analyse réseau (Wireshark, tcpdump)</span><span>72%</span></div><div class="skill__bar"><div class="skill__fill" data-level="72"></div></div></div>
+          <div class="skill"><div class="skill__row"><span>Pentest : TryHackMe (IDOR, auth bypass)</span><span>60%</span></div><div class="skill__bar"><div class="skill__fill" data-level="60"></div></div></div>
+        </div>
+      </div>
+
+      <!-- Langues parlées -->
+      <div style="margin-top:56px" class="reveal">
+        <h3 style="margin-bottom:4px">Langues parlées</h3>
+        <div class="langs">
+          <div class="lang reveal"><span class="lang__flag">🇫🇷</span><h4>Français</h4><span>Natif</span></div>
+          <div class="lang reveal" data-delay="1"><span class="lang__flag">🇩🇿</span><h4>Arabe</h4><span>Courant</span></div>
+          <div class="lang reveal" data-delay="2"><span class="lang__flag">🇬🇧</span><h4>Anglais</h4><span>Technique — B2</span></div>
+          <div class="lang reveal" data-delay="3"><span class="lang__flag">🇪🇸</span><h4>Espagnol</h4><span>Intermédiaire</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETS (aperçu) ===== -->
+  <section id="projets">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">// Projets</span>
+        <h2>Mes projets récents</h2>
+        <p>Une sélection de mes travaux : infrastructures réseau, développement web et cybersécurité.</p>
+      </div>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card__icon">🖧</div>
+          <h3>Réseau multi-sites — SAÉ 2.01</h3>
+          <div class="tags"><span class="tag">OPNsense</span><span class="tag">VLAN</span><span class="tag">DHCP relay</span><span class="tag">Cisco</span></div>
+          <p>Infrastructure complète Siège/Agence : segmentation VLAN, relais DHCP, déploiement PXE/FOG et routage inter-sites.</p>
+          <a href="projet-reseau.html" class="card__link">Voir le projet</a>
+        </article>
+        <article class="card reveal" data-delay="1">
+          <div class="card__icon">🌐</div>
+          <h3>Plateforme IPAM — SAÉ 2.03</h3>
+          <div class="tags"><span class="tag">PHP</span><span class="tag">PostgreSQL</span><span class="tag">Web</span></div>
+          <p>Application web de gestion d'adresses IP pour un FAI fictif : plan d'adressage, attribution et suivi des sous-réseaux.</p>
+          <a href="projet-ipam.html" class="card__link">Voir le projet</a>
+        </article>
+        <article class="card reveal" data-delay="2">
+          <div class="card__icon">🛡️</div>
+          <h3>Sensibilisation cybersécurité</h3>
+          <div class="tags"><span class="tag">Cybersécurité</span><span class="tag">Vidéo</span></div>
+          <p>Vidéo de sensibilisation sur les risques numériques et les bonnes pratiques : mots de passe, phishing, mises à jour.</p>
+          <a href="projet-cyber.html" class="card__link">Voir le projet</a>
+        </article>
+      </div>
+      <div style="text-align:center; margin-top:44px" class="reveal">
+        <a href="projets.html" class="btn btn--ghost">Tous mes projets →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <span class="eyebrow">// Contact</span>
+        <h2>Travaillons ensemble</h2>
+        <p>Ouvert aux échanges, aux opportunités d'alternance et aux projets. Je réponds rapidement.</p>
+        <ul class="contact-list">
+          <li><span class="card__icon">📧</span> ouamraneyounes90@gmail.com</li>
+          <li><span class="card__icon">📍</span> Île-de-France, France</li>
+          <li><span class="card__icon">🎓</span> IUT de Villetaneuse — Sorbonne Paris Nord</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

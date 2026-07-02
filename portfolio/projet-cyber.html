@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensibilisation à la cybersécurité — SAÉ 1.01 | OUAMRANE Younes</title>
+  <meta name="description" content="SAÉ 1.01 : vidéo de sensibilisation à l'hygiène informatique et à la cybersécurité — phishing, mots de passe, mises à jour.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="projets.html">Projets</a><span class="sep">/</span>SAÉ 1.01</nav>
+      <span class="eyebrow reveal">// Projet — SAÉ 1.01</span>
+      <h1 class="reveal" data-delay="1">Sensibilisation à la <span style="color:var(--accent)">cybersécurité</span></h1>
+      <p class="reveal" data-delay="2">Réalisation d'une vidéo de sensibilisation aux risques numériques à destination du grand public : identifier les menaces courantes et adopter les bons réflexes.</p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Contexte</span><strong>SAÉ 1.01 — BUT R&T</strong></div>
+        <div class="meta-item"><span>Format</span><strong>Vidéo pédagogique</strong></div>
+        <div class="meta-item"><span>Cible</span><strong>Grand public</strong></div>
+        <div class="meta-item"><span>Thème</span><strong>Hygiène informatique</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#contexte">Contexte et objectifs</a></li>
+        <li><a href="#themes">Menaces et bons réflexes présentés</a></li>
+        <li><a href="#realisation">Réalisation de la vidéo</a></li>
+        <li><a href="#bilan">Bilan et compétences</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="contexte">Contexte et objectifs</h2>
+      <p>Première SAÉ du BUT : sensibiliser un public non technique à l'<strong>hygiène informatique</strong>. Le défi n'est pas technique mais pédagogique — rendre des menaces abstraites concrètes et mémorables en quelques minutes de vidéo.</p>
+
+      <h2 id="themes">Menaces et bons réflexes présentés</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Menace</th><th>Le risque</th><th>Le bon réflexe</th></tr></thead>
+          <tbody>
+            <tr><td>Phishing</td><td>Vol d'identifiants via de faux emails ou sites</td><td>Vérifier l'expéditeur et l'URL avant de cliquer</td></tr>
+            <tr><td>Mots de passe faibles</td><td>Compromission de comptes en cascade</td><td>Mots de passe longs, uniques, gestionnaire dédié</td></tr>
+            <tr><td>Logiciels obsolètes</td><td>Failles connues exploitables</td><td>Activer les mises à jour automatiques</td></tr>
+            <tr><td>Perte de données</td><td>Ransomware, panne, vol de matériel</td><td>Sauvegardes régulières (règle 3-2-1)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="realisation">Réalisation de la vidéo</h2>
+      <p>Travail en équipe sur toute la chaîne : écriture du <strong>script</strong>, choix de mises en situation concrètes (un faux email de banque, un mot de passe deviné), tournage/montage et vérification que chaque conseil reste applicable par n'importe qui.</p>
+      <p>La difficulté principale : <strong>vulgariser sans déformer</strong>. Chaque affirmation technique devait rester correcte tout en étant compréhensible sans bagage informatique.</p>
+
+      <h2 id="bilan">Bilan et compétences</h2>
+      <p>Cette SAÉ m'a confirmé mon intérêt pour la <strong>cybersécurité</strong>, que je continue d'explorer sur TryHackMe (exercices IDOR, contournement d'authentification). Elle m'a aussi appris qu'expliquer clairement est une compétence technique à part entière.</p>
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="projets.html" class="btn btn--ghost">← Tous les projets</a>
+        <a href="index.html#contact" class="btn btn--primary">Discuter de ce projet</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

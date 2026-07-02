@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juris Nova — Réseau d'entreprise virtualisé | OUAMRANE Younes</title>
+  <meta name="description" content="Projet Juris Nova : réseau complet d'un cabinet d'avocats virtualisé sous GNS3 avec OPNsense, 7 VLANs, GLPI, MariaDB, Samba et Apache.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="projets.html">Projets</a><span class="sep">/</span>Juris Nova</nav>
+      <span class="eyebrow reveal">// Projet — SAÉ intégrative</span>
+      <h1 class="reveal" data-delay="1">Juris Nova — réseau d'un <span style="color:var(--accent)">cabinet d'avocats</span></h1>
+      <p class="reveal" data-delay="2">Conception de A à Z du système d'information d'un cabinet d'avocats fictif : infrastructure entièrement virtualisée sous GNS3, segmentée en 7 VLANs, avec parc de serveurs Debian et outils de gestion.</p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Contexte</span><strong>Projet intégratif</strong></div>
+        <div class="meta-item"><span>Environnement</span><strong>GNS3 · Debian</strong></div>
+        <div class="meta-item"><span>VLANs</span><strong>7 réseaux segmentés</strong></div>
+        <div class="meta-item"><span>Services</span><strong>GLPI · Samba · Web</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#contexte">Contexte et objectifs</a></li>
+        <li><a href="#architecture">Architecture du réseau</a></li>
+        <li><a href="#services">Services déployés</a></li>
+        <li><a href="#difficultes">Difficultés rencontrées</a></li>
+        <li><a href="#bilan">Bilan et compétences</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="contexte">Contexte et objectifs</h2>
+      <p>Juris Nova est un cabinet d'avocats fictif pour lequel il fallait construire <strong>tout le réseau d'entreprise</strong> : segmentation par métiers, services internes (gestion de parc, partage de fichiers, intranet) et sécurisation des flux entre services.</p>
+      <p>Contrainte forte : l'infrastructure devait être <strong>100% virtualisée dans GNS3</strong>, donc reproductible sur n'importe quelle machine, et documentée avec schémas et procédures.</p>
+
+      <h2 id="architecture">Architecture du réseau</h2>
+      <p>Un pare-feu OPNsense central route et filtre les échanges entre 7 VLANs métiers, desservis par des switchs Cisco IOSvL2 en trunk 802.1Q. Les serveurs sont isolés dans leur propre VLAN.</p>
+      <div style="background:#0b1524; border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin:24px 0; overflow-x:auto"><svg viewBox="0 0 860 300" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:760px; font-family:'JetBrains Mono',monospace"><text x="430" y="26" fill="#97a8bc" font-size="12" text-anchor="middle" letter-spacing="2">TOPOLOGIE — CABINET JURIS NOVA (GNS3)</text><rect x="330" y="44" width="200" height="56" rx="10" fill="#101f30" stroke="#f6c945" stroke-width="1.5"/><text x="430.0" y="68" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🔥 OPNsense</text><text x="430.0" y="86" fill="#97a8bc" font-size="10.5" text-anchor="middle">Pare-feu · Routage inter-VLAN</text><line x1="430" y1="100" x2="430" y2="128" stroke="#3a4d63" stroke-width="2"/><rect x="280" y="128" width="300" height="56" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/><text x="430.0" y="152" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🔀 Switchs Cisco IOSvL2</text><text x="430.0" y="170" fill="#97a8bc" font-size="10.5" text-anchor="middle">Trunks 802.1Q · STP</text><line x1="430" y1="184" x2="430" y2="222" stroke="#3a4d63" stroke-width="2"/><line x1="81" y1="222" x2="778" y2="222" stroke="#3a4d63" stroke-width="2"/><rect x="30" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="81" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 10</text><text x="81" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Direction</text><line x1="81" y1="222" x2="81" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="145" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="196" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 11</text><text x="196" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Avocats</text><line x1="196" y1="222" x2="196" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="260" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="311" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 12</text><text x="311" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Secrétariat</text><line x1="311" y1="222" x2="311" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="375" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="426" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 13</text><text x="426" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Compta</text><line x1="426" y1="222" x2="426" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="490" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="541" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 14</text><text x="541" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Informatique</text><line x1="541" y1="222" x2="541" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="605" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="656" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 15</text><text x="656" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Serveurs</text><line x1="656" y1="222" x2="656" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="720" y="240" width="103" height="46" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="771" y="259" fill="#f6c945" font-size="10" font-weight="700" text-anchor="middle">VLAN 16</text><text x="771" y="275" fill="#97a8bc" font-size="9.5" text-anchor="middle">Invités</text><line x1="771" y1="222" x2="771" y2="240" stroke="#3a4d63" stroke-width="2"/><rect x="610" y="44" width="220" height="56" rx="10" fill="#101f30" stroke="#4ade80" stroke-width="1.5"/><text x="720.0" y="68" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🗄️ Serveurs Debian</text><text x="720.0" y="86" fill="#97a8bc" font-size="10.5" text-anchor="middle">GLPI · MariaDB · Samba · Apache</text><line x1="580" y1="156" x2="640" y2="100" stroke="#3a4d63" stroke-width="2"/></svg></div>
+
+      <h2 id="services">Services déployés</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Service</th><th>Rôle</th><th>Détails techniques</th></tr></thead>
+          <tbody>
+            <tr><td>GLPI 10.x</td><td>Gestion de parc &amp; tickets</td><td>Serveur dédié + base MariaDB séparée, plugin Archimap</td></tr>
+            <tr><td>MariaDB</td><td>Base de données</td><td>Serveur indépendant, accès restreint au VLAN serveurs</td></tr>
+            <tr><td>Samba</td><td>Partage de fichiers</td><td>Contrôle d'accès par groupes (avocats, secrétariat, direction)</td></tr>
+            <tr><td>Apache</td><td>Intranet web</td><td>Hébergement de l'interface GLPI et des pages internes</td></tr>
+            <tr><td>Unbound (DNS)</td><td>Résolution interne</td><td>Overrides DNS sur OPNsense pour les noms internes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="difficultes">Difficultés rencontrées</h2>
+      <ul>
+        <li><strong>RAM insuffisante :</strong> la VM GNS3 tuait des machines en plein fonctionnement (OOM kill) — résolu en redimensionnant la VM et en allégeant les nœuds.</li>
+        <li><strong>Interfaces VLAN inversées :</strong> deux interfaces OPNsense avaient leurs IP échangées — diagnostiqué en comparant la table ARP avec le plan d'adressage.</li>
+        <li><strong>Tempête de broadcast :</strong> une boucle de commutation a saturé le réseau — corrigée en validant la configuration STP.</li>
+        <li><strong>Gestion des paquets Debian :</strong> dépôts backports en 404 et verrous dpkg — résolus en nettoyant les sources et les processus bloquants.</li>
+      </ul>
+
+      <h2 id="bilan">Bilan et compétences</h2>
+      <p>C'est le projet le plus complet de ma première année : il combine <strong>réseau, système, services et sécurité</strong> dans une seule infrastructure cohérente. Le débogage m'a appris autant que la conception — chaque panne avait sa méthode de diagnostic.</p>
+      <p>Compétences travaillées : Administrer (services Linux, GLPI, Samba), Connecter (VLANs, trunks, routage) et Sécuriser (filtrage inter-VLAN, cloisonnement des serveurs).</p>
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="projets.html" class="btn btn--ghost">← Tous les projets</a>
+        <a href="index.html#contact" class="btn btn--primary">Discuter de ce projet</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

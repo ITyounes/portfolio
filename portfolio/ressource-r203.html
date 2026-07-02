@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R2.03 — Bases des services réseaux | OUAMRANE Younes</title>
+  <meta name="description" content="Ressource R2.03 du BUT R&T : TP DHCP, SSH, Apache et FTP sur Linux, notions abordées et compétences travaillées.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html" class="active">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="ressources.html">Ressources</a><span class="sep">/</span>R2.03</nav>
+      <span class="eyebrow reveal">// Ressource — Semestre 2</span>
+      <h1 class="reveal" data-delay="1">R2.03 — <span style="color:var(--accent)">Bases des services réseaux</span></h1>
+      <p class="reveal" data-delay="2">
+        Installer, configurer et administrer les services essentiels d'un réseau d'entreprise
+        sur des serveurs Linux : DHCP, SSH, web et transfert de fichiers.
+      </p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Semestre</span><strong>Semestre 2</strong></div>
+        <div class="meta-item"><span>Environnement</span><strong>Linux Debian</strong></div>
+        <div class="meta-item"><span>TP réalisés</span><strong>4 travaux pratiques</strong></div>
+        <div class="meta-item"><span>Compétence</span><strong>Administrer</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENU + SOMMAIRE ===== -->
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#objectifs">Objectifs de la ressource</a></li>
+        <li><a href="#notions">Notions abordées</a></li>
+        <li><a href="#tp1">TP 1 — Serveur DHCP</a></li>
+        <li><a href="#tp2">TP 2 — SSH &amp; SCP</a></li>
+        <li><a href="#tp3">TP 3 — Serveur web Apache</a></li>
+        <li><a href="#tp4">TP 4 — Serveur FTP</a></li>
+        <li><a href="#competences">Compétences travaillées</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="objectifs">Objectifs de la ressource</h2>
+      <p>
+        La ressource R2.03 forme à l'<strong>administration des services réseau</strong> qui font
+        tourner une entreprise au quotidien. À la fin du module, je suis capable d'installer un
+        service sur un serveur Linux, de le configurer proprement, de le tester et de diagnostiquer
+        les pannes courantes.
+      </p>
+      <p>
+        Tous les TP ont été réalisés sur des machines virtuelles <strong>Debian</strong>, avec un
+        compte rendu rédigé pour chacun.
+      </p>
+
+      <h2 id="notions">Notions abordées</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Service</th><th>Protocole / Port</th><th>Rôle dans un réseau</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>DHCP</td><td>UDP 67/68</td><td>Attribution automatique des adresses IP</td></tr>
+            <tr><td>SSH / SCP</td><td>TCP 22</td><td>Administration distante sécurisée et transfert de fichiers</td></tr>
+            <tr><td>HTTP (Apache)</td><td>TCP 80</td><td>Hébergement de sites et d'applications web</td></tr>
+            <tr><td>FTP</td><td>TCP 20/21</td><td>Transfert de fichiers client/serveur</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="tp1">TP 1 — Serveur DHCP</h2>
+      <p>
+        Installation d'<code>isc-dhcp-server</code> sur Debian, définition d'une plage d'adresses,
+        d'une passerelle et de serveurs DNS, puis validation avec des clients qui obtiennent leur
+        configuration automatiquement.
+      </p>
+      <div class="codeblock">
+<span class="c-accent"># /etc/dhcp/dhcpd.conf</span>
+subnet 192.168.10.0 netmask 255.255.255.0 {
+  range 192.168.10.100 192.168.10.200;
+  option routers 192.168.10.1;
+  option domain-name-servers 8.8.8.8;
+}
+<span class="c-ok">✔ Client testé : bail obtenu en 192.168.10.100</span>
+      </div>
+      <p><strong>Ce que j'ai appris :</strong> lecture des baux DHCP, analyse des trames DORA avec Wireshark et diagnostic quand un client n'obtient pas d'adresse.</p>
+
+      <h2 id="tp2">TP 2 — Accès distant SSH &amp; SCP</h2>
+      <p>
+        Mise en place d'<code>openssh-server</code>, connexion distante entre machines, transfert de
+        fichiers avec <code>scp</code> et sécurisation de base : authentification par clés et
+        restriction de l'accès root.
+      </p>
+      <ul>
+        <li>Génération d'une paire de clés avec <code>ssh-keygen</code> et déploiement via <code>ssh-copy-id</code></li>
+        <li>Transferts de fichiers et de dossiers avec <code>scp -r</code></li>
+        <li>Durcissement de <code>sshd_config</code> : <code>PermitRootLogin no</code></li>
+      </ul>
+
+      <h2 id="tp3">TP 3 — Serveur web Apache</h2>
+      <p>
+        Installation d'Apache 2, hébergement d'un site statique, création de
+        <strong>virtual hosts</strong> pour servir plusieurs sites sur un même serveur, et gestion
+        des droits sur <code>/var/www</code>.
+      </p>
+      <div class="callout">
+        <p>💡 <strong>À retenir :</strong> un VirtualHost mal ordonné peut servir le mauvais site — le premier hôte déclaré sert de site par défaut si aucun <code>ServerName</code> ne correspond.</p>
+      </div>
+
+      <h2 id="tp4">TP 4 — Serveur FTP</h2>
+      <p>
+        Configuration d'un serveur FTP (vsftpd) : accès anonyme puis authentifié, chroot des
+        utilisateurs dans leur répertoire personnel et comparaison des modes actif/passif au niveau
+        des flux réseau.
+      </p>
+      <p>
+        Analyse des échanges avec Wireshark pour comprendre pourquoi FTP transmet les identifiants
+        en clair — et pourquoi on lui préfère aujourd'hui SFTP en production.
+      </p>
+
+      <h2 id="competences">Compétences travaillées</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Compétence BUT R&amp;T</th><th>Mise en pratique dans R2.03</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Administrer les réseaux et l'Internet</td><td>Installation et configuration complète de 4 services réseau sur Linux</td></tr>
+            <tr><td>Connecter les entreprises et les usagers</td><td>Compréhension des flux client/serveur et des ports associés</td></tr>
+            <tr><td>Créer des outils et applications pour le R&amp;T</td><td>Scripts de test et automatisation des vérifications de services</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        Cette ressource est directement réinvestie dans mes projets : le relais DHCP de la
+        <a href="projet-reseau.html">SAÉ 2.01</a> et les serveurs Apache/MariaDB du projet Juris Nova
+        s'appuient sur ces bases.
+      </p>
+
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="ressources.html" class="btn btn--ghost">← Toutes les ressources</a>
+        <a href="projets.html" class="btn btn--primary">Voir les projets liés</a>
+      </div>
+
+    </article>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

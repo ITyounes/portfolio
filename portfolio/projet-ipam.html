@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plateforme IPAM — SAÉ 2.03 | OUAMRANE Younes</title>
+  <meta name="description" content="SAÉ 2.03 : application web IPAM en PHP/PostgreSQL pour gérer le plan d'adressage d'un fournisseur d'accès fictif.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="projets.html">Projets</a><span class="sep">/</span>SAÉ 2.03</nav>
+      <span class="eyebrow reveal">// Projet — SAÉ 2.03</span>
+      <h1 class="reveal" data-delay="1">Plateforme <span style="color:var(--accent)">IPAM</span> pour un FAI</h1>
+      <p class="reveal" data-delay="2">Développement d'une application web de gestion d'adresses IP (IP Address Management) pour un fournisseur d'accès fictif : attribution, suivi et libération des sous-réseaux clients.</p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Contexte</span><strong>SAÉ 2.03 — BUT R&T</strong></div>
+        <div class="meta-item"><span>Stack</span><strong>PHP · PostgreSQL</strong></div>
+        <div class="meta-item"><span>Adressage</span><strong>164.166.0.0/16</strong></div>
+        <div class="meta-item"><span>Livrable</span><strong>App web + oral</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#contexte">Contexte et objectifs</a></li>
+        <li><a href="#architecture">Architecture de l'application</a></li>
+        <li><a href="#fonctionnalites">Fonctionnalités développées</a></li>
+        <li><a href="#bilan">Bilan et compétences</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="contexte">Contexte et objectifs</h2>
+      <p>Un fournisseur d'accès fictif (AS 65556) dispose du bloc <code>164.166.0.0/16</code> et doit attribuer des sous-réseaux à ses clients. À la main, c'est source d'erreurs : doublons, chevauchements, sous-réseaux fantômes.</p>
+      <p>Objectif : développer un <strong>outil web IPAM</strong> qui centralise le plan d'adressage et automatise l'attribution.</p>
+
+      <h2 id="architecture">Architecture de l'application</h2>
+      <p>Architecture web classique en trois briques : le navigateur consomme des pages générées en PHP, qui interroge une base PostgreSQL contenant le plan d'adressage.</p>
+      <div style="background:#0b1524; border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin:24px 0; overflow-x:auto"><svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:680px; font-family:'JetBrains Mono',monospace"><rect x="30" y="60" width="200" height="66" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/><text x="130.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">💻 Navigateur</text><text x="130.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Interface web IPAM</text><line x1="230" y1="93" x2="330" y2="93" stroke="#f6c945" stroke-width="2.5"/><polygon points="320,88 332,93 320,98" fill="#f6c945"/><text x="280.0" y="81" fill="#f6c945" font-size="11" text-anchor="middle">HTTP</text><rect x="330" y="60" width="220" height="66" rx="10" fill="#101f30" stroke="#f6c945" stroke-width="1.5"/><text x="440.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🖥️ Apache + PHP</text><text x="440.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Logique applicative</text><line x1="550" y1="93" x2="640" y2="93" stroke="#f6c945" stroke-width="2.5"/><polygon points="630,88 642,93 630,98" fill="#f6c945"/><text x="595.0" y="81" fill="#f6c945" font-size="11" text-anchor="middle">SQL</text><rect x="640" y="60" width="190" height="66" rx="10" fill="#101f30" stroke="#4ade80" stroke-width="1.5"/><text x="735.0" y="84" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🐘 PostgreSQL</text><text x="735.0" y="102" fill="#97a8bc" font-size="10.5" text-anchor="middle">Plan d'adressage</text><text x="430" y="190" fill="#97a8bc" font-size="12" text-anchor="middle">AS 65556 — espace d'adressage 164.166.0.0/16</text><rect x="180" y="210" width="500" height="44" rx="9" fill="rgba(246,201,69,0.06)" stroke="#f6c945" stroke-width="1.2"/><text x="430" y="237" fill="#f6c945" font-size="12" text-anchor="middle">Attribution · Suivi · Libération des sous-réseaux clients</text></svg></div>
+
+      <h2 id="fonctionnalites">Fonctionnalités développées</h2>
+      <ul>
+        <li><strong>Attribution automatique :</strong> l'outil trouve le prochain sous-réseau libre de la taille demandée dans le /16.</li>
+        <li><strong>Vue du plan d'adressage :</strong> liste des sous-réseaux attribués, avec client, masque et état.</li>
+        <li><strong>Libération :</strong> restitution d'un sous-réseau au pool disponible.</li>
+        <li><strong>Contrôles d'intégrité :</strong> impossible d'attribuer un bloc qui chevauche un existant — vérifié en SQL.</li>
+      </ul>
+
+      <h2 id="bilan">Bilan et compétences</h2>
+      <p>Ce projet lie mes deux mondes : le <strong>réseau</strong> (calculs de sous-réseaux, masques, agrégation) et le <strong>développement web</strong> (PHP, SQL, formulaires). C'est exactement le type d'outil interne qu'utilise un opérateur au quotidien.</p>
+      <p>Compétences travaillées : Créer des outils et applications informatiques pour les R&amp;T, et Administrer (conception d'un plan d'adressage).</p>
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="projets.html" class="btn btn--ghost">← Tous les projets</a>
+        <a href="index.html#contact" class="btn btn--primary">Discuter de ce projet</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>

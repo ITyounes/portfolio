@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAÉ 2.01 — Réseau multi-sites | OUAMRANE Younes</title>
+  <meta name="description" content="Projet SAÉ 2.01 : conception d'une infrastructure réseau multi-sites avec OPNsense, VLANs, relais DHCP, PXE/FOG et commutation Cisco.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+  <div class="bg-glow bg-glow--1"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav__logo">younes<span>@</span>rt<span>:~$</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="index.html#parcours">Parcours</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="projets.html" class="active">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn--primary">Me contacter</a>
+      <button class="nav__burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <!-- ===== EN-TÊTE ===== -->
+  <header class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb reveal"><a href="index.html">Accueil</a><span class="sep">/</span><a href="projets.html">Projets</a><span class="sep">/</span>SAÉ 2.01</nav>
+      <span class="eyebrow reveal">// Projet — SAÉ 2.01</span>
+      <h1 class="reveal" data-delay="1">Réseau <span style="color:var(--accent)">multi-sites</span> Siège / Agence</h1>
+      <p class="reveal" data-delay="2">
+        Conception et déploiement d'une infrastructure réseau d'entreprise sur deux sites :
+        segmentation VLAN, relais DHCP, déploiement de postes automatisé et routage inter-sites.
+      </p>
+      <div class="meta-grid reveal" data-delay="3">
+        <div class="meta-item"><span>Contexte</span><strong>SAÉ 2.01 — BUT R&amp;T</strong></div>
+        <div class="meta-item"><span>Durée</span><strong>1 semestre</strong></div>
+        <div class="meta-item"><span>Équipe</span><strong>3 étudiants</strong></div>
+        <div class="meta-item"><span>Livrable</span><strong>Rapport 49 pages</strong></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENU + SOMMAIRE ===== -->
+  <div class="container article-layout">
+
+    <aside class="toc">
+      <div class="toc__title">Sommaire</div>
+      <ul>
+        <li><a href="#contexte">Contexte et objectifs</a></li>
+        <li><a href="#architecture">Architecture du réseau</a></li>
+        <li><a href="#technos">Technologies utilisées</a></li>
+        <li><a href="#realisation">Réalisation technique</a></li>
+        <li><a href="#difficultes">Difficultés rencontrées</a></li>
+        <li><a href="#bilan">Bilan et compétences</a></li>
+      </ul>
+    </aside>
+
+    <article class="article">
+
+      <h2 id="contexte">Contexte et objectifs</h2>
+      <p>
+        Dans le cadre de la SAÉ 2.01, notre équipe devait concevoir le réseau d'une entreprise
+        répartie sur <strong>deux sites</strong> : un siège social et une agence distante. Le cahier des
+        charges imposait une segmentation par services, une attribution automatique des adresses IP
+        et un déploiement de postes de travail sans intervention manuelle.
+      </p>
+      <p>
+        L'objectif : livrer une infrastructure <strong>fonctionnelle, documentée et reproductible</strong>,
+        accompagnée d'un rapport technique professionnel.
+      </p>
+
+      <h2 id="architecture">Architecture du réseau</h2>
+      <p>
+        Chaque site dispose de son propre pare-feu OPNsense assurant le routage inter-VLAN et le
+        filtrage. Les deux sites sont reliés par un lien routé en statique. La distribution DHCP est
+        centralisée au siège : l'agence utilise un <strong>relais DHCP</strong> configuré sur les
+        équipements Cisco.
+      </p>
+      <div style="background:#0b1524; border:1px solid var(--border); border-radius:var(--radius); padding:24px; margin:24px 0; overflow-x:auto">
+        <svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; min-width:640px; font-family:'JetBrains Mono',monospace">
+          <!-- Zones -->
+          <rect x="20" y="20" width="360" height="340" rx="14" fill="rgba(246,201,69,0.04)" stroke="#f6c945" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <rect x="480" y="20" width="360" height="340" rx="14" fill="rgba(255,255,255,0.02)" stroke="#97a8bc" stroke-width="1.5" stroke-dasharray="6 5"/>
+          <text x="42" y="48" fill="#f6c945" font-size="15" font-weight="700" letter-spacing="2">SIÈGE</text>
+          <text x="502" y="48" fill="#97a8bc" font-size="15" font-weight="700" letter-spacing="2">AGENCE</text>
+
+          <!-- Lien inter-sites -->
+          <line x1="380" y1="120" x2="480" y2="120" stroke="#f6c945" stroke-width="2.5"/>
+          <polygon points="472,115 484,120 472,125" fill="#f6c945"/>
+          <polygon points="388,115 376,120 388,125" fill="#f6c945"/>
+          <text x="430" y="105" fill="#f6c945" font-size="11" text-anchor="middle">Routage</text>
+          <text x="430" y="145" fill="#97a8bc" font-size="11" text-anchor="middle">statique</text>
+
+          <!-- OPNsense Siège -->
+          <rect x="60" y="90" width="280" height="58" rx="10" fill="#142639" stroke="#f6c945" stroke-width="1.5"/>
+          <text x="200" y="115" fill="#eaf0f8" font-size="14" font-weight="700" text-anchor="middle">🔥 OPNsense</text>
+          <text x="200" y="136" fill="#97a8bc" font-size="11" text-anchor="middle">Pare-feu · Serveur DHCP</text>
+
+          <!-- OPNsense Agence -->
+          <rect x="520" y="90" width="280" height="58" rx="10" fill="#142639" stroke="#97a8bc" stroke-width="1.5"/>
+          <text x="660" y="115" fill="#eaf0f8" font-size="14" font-weight="700" text-anchor="middle">🔥 OPNsense</text>
+          <text x="660" y="136" fill="#97a8bc" font-size="11" text-anchor="middle">Pare-feu · Relais DHCP</text>
+
+          <!-- Liens verticaux -->
+          <line x1="200" y1="148" x2="200" y2="190" stroke="#3a4d63" stroke-width="2"/>
+          <line x1="660" y1="148" x2="660" y2="190" stroke="#3a4d63" stroke-width="2"/>
+
+          <!-- Switch Siège -->
+          <rect x="60" y="190" width="280" height="52" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/>
+          <text x="200" y="212" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🔀 Switch Cisco</text>
+          <text x="200" y="230" fill="#97a8bc" font-size="11" text-anchor="middle">VLANs · Trunk 802.1Q</text>
+
+          <!-- Switch Agence -->
+          <rect x="520" y="190" width="280" height="52" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/>
+          <text x="660" y="212" fill="#eaf0f8" font-size="13" font-weight="700" text-anchor="middle">🔀 Switch Cisco</text>
+          <text x="660" y="230" fill="#97a8bc" font-size="11" text-anchor="middle">VLANs · ip helper-address</text>
+
+          <!-- Liens vers le bas -->
+          <line x1="130" y1="242" x2="130" y2="284" stroke="#3a4d63" stroke-width="2"/>
+          <line x1="270" y1="242" x2="270" y2="284" stroke="#3a4d63" stroke-width="2"/>
+          <line x1="660" y1="242" x2="660" y2="284" stroke="#3a4d63" stroke-width="2"/>
+
+          <!-- Serveur FOG -->
+          <rect x="60" y="284" width="135" height="52" rx="10" fill="#101f30" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="127" y="306" fill="#eaf0f8" font-size="12" font-weight="700" text-anchor="middle">🗄️ Serveur FOG</text>
+          <text x="127" y="323" fill="#4ade80" font-size="10" text-anchor="middle">PXE · Images</text>
+
+          <!-- Postes Siège -->
+          <rect x="205" y="284" width="135" height="52" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/>
+          <text x="272" y="306" fill="#eaf0f8" font-size="12" font-weight="700" text-anchor="middle">💻 Postes</text>
+          <text x="272" y="323" fill="#97a8bc" font-size="10" text-anchor="middle">DHCP direct</text>
+
+          <!-- Postes Agence -->
+          <rect x="520" y="284" width="280" height="52" rx="10" fill="#101f30" stroke="#3a4d63" stroke-width="1.5"/>
+          <text x="660" y="306" fill="#eaf0f8" font-size="12" font-weight="700" text-anchor="middle">💻 Postes clients</text>
+          <text x="660" y="323" fill="#97a8bc" font-size="10" text-anchor="middle">Adresses via relais → DHCP du siège</text>
+        </svg>
+      </div>
+
+      <h2 id="technos">Technologies utilisées</h2>
+      <p>Chaque brique de l'infrastructure a été choisie pour répondre à un besoin précis :</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Outil</th><th>Fonction principale</th><th>Apport au projet</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>OPNsense</td><td>Pare-feu &amp; routage inter-VLAN</td><td>Sécurisation et cloisonnement des flux</td></tr>
+            <tr><td>Cisco IOS</td><td>Commutation, VLANs, relais DHCP</td><td>Segmentation physique du réseau</td></tr>
+            <tr><td>ISC DHCP</td><td>Attribution centralisée des adresses</td><td>Zéro configuration manuelle des postes</td></tr>
+            <tr><td>FOG + PXE</td><td>Déploiement d'images système</td><td>Installation automatisée des postes</td></tr>
+            <tr><td>GNS3</td><td>Virtualisation de l'infrastructure</td><td>Maquette complète et reproductible</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="realisation">Réalisation technique</h2>
+      <h3>1. Segmentation VLAN</h3>
+      <p>
+        Création des VLANs par service (administration, comptabilité, technique…) avec trunks 802.1Q
+        entre les switches et les pare-feux. Chaque VLAN dispose de son sous-réseau dédié et de ses
+        règles de filtrage propres.
+      </p>
+      <h3>2. Relais DHCP inter-sites</h3>
+      <p>
+        Configuration du relais sur l'équipement Cisco de l'agence avec la commande
+        <code>ip helper-address</code>, pointant vers le serveur DHCP du siège. Les requêtes
+        broadcast des clients sont transformées en unicast et routées vers le siège.
+      </p>
+      <h3>3. Déploiement PXE / FOG</h3>
+      <p>
+        Mise en place d'un serveur FOG pour capturer et déployer des images de postes via le boot
+        réseau PXE. Un poste neuf démarre sur le réseau, récupère son image et s'installe seul.
+      </p>
+      <div class="callout">
+        <p>💡 <strong>Point clé :</strong> l'intégration PXE nécessite que le DHCP renvoie les options 66 (serveur TFTP) et 67 (fichier de boot) — un détail qui nous a demandé plusieurs heures de débogage.</p>
+      </div>
+
+      <h2 id="difficultes">Difficultés rencontrées</h2>
+      <ul>
+        <li><strong>Boucles de commutation :</strong> un broadcast storm nous a obligés à revoir le câblage et à valider la configuration STP sur les switches.</li>
+        <li><strong>Relais DHCP :</strong> les premières requêtes n'atteignaient pas le siège — problème de route retour manquante sur le pare-feu.</li>
+        <li><strong>Boot PXE :</strong> options DHCP 66/67 absentes au départ, empêchant les clients de trouver le serveur FOG.</li>
+      </ul>
+
+      <h2 id="bilan">Bilan et compétences</h2>
+      <p>
+        Ce projet m'a permis de valider les compétences <strong>« Administrer »</strong> et
+        <strong>« Connecter »</strong> du référentiel BUT R&amp;T : conception d'un plan d'adressage,
+        configuration d'équipements Cisco, mise en place de services réseau centralisés et rédaction
+        d'une documentation technique de 49 pages.
+      </p>
+      <p>
+        C'est aussi un vrai travail d'équipe : répartition des rôles, intégration des briques de
+        chacun et débogage collectif jusqu'à la maquette finale fonctionnelle.
+      </p>
+
+      <div style="display:flex; gap:16px; margin-top:40px; flex-wrap:wrap">
+        <a href="projets.html" class="btn btn--ghost">← Tous les projets</a>
+        <a href="index.html#contact" class="btn btn--primary">Discuter de ce projet</a>
+      </div>
+
+    </article>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Younes Ouamrane — Portfolio BUT R&amp;T</p>
+      <ul class="footer__links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="ressources.html">Ressources</a></li>
+        <li><a href="https://github.com/ITyounes" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="Retour en haut">↑</button>
+  <script src="js/script.js"></script>
+</body>
+</html>
